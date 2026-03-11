@@ -1,0 +1,3 @@
+POST: out.txt/jobs {'tower_job_id': '123', 'tower_job_template_id': None, 'tower_job_template_name': None, 'ansible_limit': None, 'tower_user_name': None, 'awx_tags': '["all"]', 'extra_vars': '{"tower_job_id": "123"}', 'artifacts': '{}', 'tower_schedule_id': None, 'tower_schedule_name': None, 'tower_workflow_job_id': None, 'tower_workflow_job_name': None, 'compliance_interval': 0, 'template_infos': 'null', 'playbook_path': 'unreachable.yml'}
+PATCH: out.txt/jobs/123 {'event': 'finished'}
+PUT: out.txt/stats {'tower_job_id': '123', 'stats': []}

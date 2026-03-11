@@ -1,0 +1,7 @@
+.idea
+
+.venv
+
+tests/integration/*.yml.actual
+__pycache__/
+.pytest_cache/

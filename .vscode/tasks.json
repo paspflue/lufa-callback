@@ -1,0 +1,67 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "mypy type tests"
+            "type": "shell",
+            "command": "mypy --ignore-missing-imports --explicit-package-bases .",
+            "problemMatcher": [],
+            "group": "test"
+        },
+        {
+            "label": "pytest unit",
+            "type": "shell",
+            "command": "cd tests/unit; PYTHONPATH=../..: pytest",
+            "problemMatcher": [],
+            "group": "test"
+        },
+        {
+            "label": "integration",
+            "type": "shell",
+            "command": "cd tests/integration; ./runtest.sh",
+            "problemMatcher": []
+        },
+        {
+            "label": "ruff format",
+            "type": "shell",
+            "command": "ruff format",
+            "problemMatcher": [],
+            "group": "test"
+        },
+        {
+            "label": "ruff check",
+            "type": "shell",
+            "command": "ruff check",
+            "problemMatcher": [],
+            "group": "test"
+        },
+        {
+            "label": "ruff all",
+            "dependsOn": [
+                "ruff format",
+                "ruff check"
+            ],
+            "dependsOrder": "sequence",
+            "problemMatcher": [],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "ci all",
+            "dependsOn": [
+                "ruff all",
+                "mypy type tests",
+                "pytest unit",
+                "integration"
+            ],
+            "dependsOrder": "sequence",
+            "problemMatcher": [],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
+        }
+    ]
+}

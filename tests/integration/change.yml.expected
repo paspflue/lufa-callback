@@ -1,0 +1,9 @@
+POST: out.txt/jobs {'tower_job_id': '123', 'tower_job_template_id': None, 'tower_job_template_name': None, 'ansible_limit': None, 'tower_user_name': None, 'awx_tags': '["all"]', 'extra_vars': '{"tower_job_id": "123"}', 'artifacts': '{}', 'tower_schedule_id': None, 'tower_schedule_name': None, 'tower_workflow_job_id': None, 'tower_workflow_job_name': None, 'compliance_interval': 0, 'template_infos': 'null', 'playbook_path': 'change.yml'}
+POST: out.txt/tasks {'ansible_uuid': '[SECRET]', 'tower_job_id': '123', 'task_name': 'Gathering Facts'}
+POST: out.txt/task_callbacks {'task_ansible_uuid': '[SECRET]', 'ansible_host': 'localhost', 'module': 'gather_facts', 'state': 'started', 'result_dump': '[SECRET]'}
+POST: out.txt/task_callbacks {'task_ansible_uuid': '[SECRET]', 'ansible_host': 'localhost', 'module': 'gather_facts', 'state': 'ok', 'result_dump': '[SECRET]'}
+POST: out.txt/tasks {'ansible_uuid': '[SECRET]', 'tower_job_id': '123', 'task_name': 'Change'}
+POST: out.txt/task_callbacks {'task_ansible_uuid': '[SECRET]', 'ansible_host': 'localhost', 'module': 'command', 'state': 'started', 'result_dump': '[SECRET]'}
+POST: out.txt/task_callbacks {'task_ansible_uuid': '[SECRET]', 'ansible_host': 'localhost', 'module': 'command', 'state': 'changed', 'result_dump': '[SECRET]'}
+PATCH: out.txt/jobs/123 {'event': 'finished'}
+PUT: out.txt/stats {'tower_job_id': '123', 'stats': [{'ansible_host': 'localhost', 'ok': 2, 'failed': 0, 'unreachable': 0, 'changed': 1, 'skipped': 0, 'rescued': 0, 'ignored': 0}]}
