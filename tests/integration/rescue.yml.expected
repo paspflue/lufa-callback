@@ -8,5 +8,8 @@ POST: out.txt/task_callbacks {'task_ansible_uuid': '[SECRET]', 'ansible_host': '
 POST: out.txt/tasks {'ansible_uuid': '[SECRET]', 'tower_job_id': '123', 'task_name': 'Saved'}
 POST: out.txt/task_callbacks {'task_ansible_uuid': '[SECRET]', 'ansible_host': 'localhost', 'module': 'command', 'state': 'started', 'result_dump': '[SECRET]'}
 POST: out.txt/task_callbacks {'task_ansible_uuid': '[SECRET]', 'ansible_host': 'localhost', 'module': 'command', 'state': 'changed', 'result_dump': '[SECRET]'}
+POST: out.txt/tasks {'ansible_uuid': '[SECRET]', 'tower_job_id': '123', 'task_name': 'Fail'}
+POST: out.txt/task_callbacks {'task_ansible_uuid': '[SECRET]', 'ansible_host': 'localhost', 'module': 'fail', 'state': 'started', 'result_dump': '[SECRET]'}
+POST: out.txt/task_callbacks {'task_ansible_uuid': '[SECRET]', 'ansible_host': 'localhost', 'module': 'fail', 'state': 'failed', 'result_dump': '[SECRET]'}
 PATCH: out.txt/jobs/123 {'event': 'finished'}
-PUT: out.txt/stats {'tower_job_id': '123', 'stats': [{'ansible_host': 'localhost', 'ok': 2, 'failed': 0, 'unreachable': 0, 'changed': 1, 'skipped': 0, 'rescued': 1, 'ignored': 0}]}
+PUT: out.txt/stats {'tower_job_id': '123', 'stats': [{'ansible_host': 'localhost', 'ok': 2, 'failed': 1, 'unreachable': 0, 'changed': 1, 'skipped': 0, 'rescued': 1, 'ignored': 0}]}
